@@ -15,7 +15,7 @@ namespace Infrastructure
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Owner>().Property(p => p.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<PortfolioItem>().Property(p => p.Id).HasDefaultValueSql("NEWID()");
-
+            modelBuilder.Entity<Address>().ToTable("Addresses");
             modelBuilder.Entity<Owner>().HasData(
                    new Owner()
                    {
